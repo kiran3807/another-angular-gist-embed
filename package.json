@@ -1,0 +1,43 @@
+{
+  "name": "another-angular-gist-embed",
+  "version": "1.0.0",
+  "description": "native angular re-write of gist-embed project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiran3807/another-angular-gist-embed.git"
+  },
+  "keywords": [
+    "angular",
+    "gist",
+    "embed"
+  ],
+  "author": {
+    "name": "Kiran Yallabandi",
+    "url": "https://github.com/kiran3807"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kiran3807/another-angular-gist-embed/issues"
+  },
+  "homepage": "https://github.com/kiran3807/another-angular-gist-embed#readme",
+  "devDependencies": {
+    "angular-mocks": "^1.5.8",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-karma": "^2.0.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-fixture": "^0.2.6",
+    "karma-html2js-preprocessor": "^1.0.0",
+    "karma-jasmine": "^0.3.0",
+    "karma-json-fixtures-preprocessor": "0.0.6",
+    "karma-phantomjs-launcher": "^1.0.2"
+  },
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
