@@ -1,0 +1,14 @@
+#ignoring the emacs backup files
+/**/\#*\#
+
+#ignoring gedit backup files
+/**/*~
+
+#ignoring the node_modules
+/**/node_modules
+
+#ignore hidden files
+/**/.*
+
+# do not ignore git ignore
+!.gitignore
