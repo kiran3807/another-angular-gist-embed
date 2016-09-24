@@ -1,6 +1,14 @@
 describe("gistEmbed directive : ",function(){
 
-	beforeEach(module('another-angular-gist-embed'));
+	beforeEach(module('another-angular-gist-embed',function($provide){
+		$provide.service("gistLoaderService",['$q',function($q){
+			var defer = $q.defer();
+			this.loadGist = function(){
+				defer.resolve('<div id="mockGist">This is fake gist</div>');
+				return defer.promise;
+			}
+		}]);
+	}));
 	
 	beforeEach( inject(function($rootScope, $compile, $httpBackend){
 		rootScope = $rootScope;
@@ -49,4 +57,18 @@ describe("gistEmbed directive : ",function(){
 		expect($template.text()).toBe('');
 		
 	});
+
+	it("should display the gist",function(){
+		var template = '<gist-embed data-gist-id="gistId"></gist-embed>',
+		$template,text,divtext;
+		
+		scope.gistId = 7865;
+		$template = compile(template)(scope);
+		text = 'This is fake gist';
+		/* Propagate promise resolution to 'then' functions using $apply(). see https://docs.angularjs.org/api/ng/service/$q */
+		rootScope.$apply();
+		divtext = $template.text();
+		expect(text).toBe(divtext);
+		
+	})
 });
