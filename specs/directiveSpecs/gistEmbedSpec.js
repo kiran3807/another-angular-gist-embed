@@ -1,4 +1,4 @@
-describe("gistEmbed directive : ",function(){
+describe("gistEmbed directive specs : ",function(){
 
 	beforeEach(module('another-angular-gist-embed',function($provide){
 		$provide.service("gistLoaderService",['$q',function($q){

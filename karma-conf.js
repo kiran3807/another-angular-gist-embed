@@ -22,6 +22,7 @@ module.exports = function(config){
 		},
 		
 		files: [
+			'specs/custom-matchers/custom-matchers.js',
 			'node_modules/angular/angular.js',
 			'node_modules/angular-mocks/angular-mocks.js',
 			'dist/another-angular-gist-embed.js',
