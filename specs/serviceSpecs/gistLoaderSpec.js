@@ -110,7 +110,6 @@ describe('gistEmbedService specs : ',function(){
 		httpBackend.when('JSONP',url+'?callback=JSON_CALLBACK').respond(multipleLineFixture);
 		service.loadGist(url,data,scope).then(function(gistData) {
 			actualLines = gistData.find('.js-file-line');
-			//expect(allLines.eq(0).text()).toBe(lines.text());
 			var expectedLines = {
 				'allLines' : allLines,
 				'lineNums' : "0"

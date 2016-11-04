@@ -1,6 +1,7 @@
 
 angular.module('another-angular-gist-embed').service('gistLoaderService',['$http','$q',function($http,$q){
     
+    var cachedUrls = {};
     function getLineNumbers(lineRangeString){
         var lineNumbers = [], range, lineNumberSections;
 
@@ -132,11 +133,16 @@ angular.module('another-angular-gist-embed').service('gistLoaderService',['$http
     }
     
     function loadGist(url,data,scope){
+        
+        if(scope.gistEnableCache) {
+               cachedUrls[url] = true 
+        }
         return $http({
                     method : 'JSONP',
                     url : url+'?callback=JSON_CALLBACK',
                     params : data,
                     timeout : 20000,
+                    cache : cachedUrls[url]
                 }).then(function(response){
                     var gistDiv = prepareGist(response.data,scope);
                     if(gistDiv){
