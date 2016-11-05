@@ -4,6 +4,9 @@ Native Angular re-write of the [gist-embed project by blairvanderhoof](https://g
 Enables you to include your gists in your angular projects. Since this is not a simply a wrapper but rather a re-write, it is completely integrated with the angular life-cycle. 
 This module does not require jQuery as an external dependency.
 
+##Demo
+[Check it out](https://plnkr.co/edit/WgpS1MsxWr4FO80XAGlS?p=preview) 
+
 ##Getting started
 Simply pick up the **another-angular-gist-embed.js** file in the **dist** folder and include it in your project source
 then simply import the module into your project module
