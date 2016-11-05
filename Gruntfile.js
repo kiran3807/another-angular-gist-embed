@@ -39,8 +39,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-karma');
 
-	grunt.registerTask('default', ['concat', 'karma']);
-	grunt.registerTask('live', ['default', 'watch']);
-	grunt.registerTask('test', ['karma']);
-	grunt.registerTask('append', ['concat']);
+	grunt.registerTask('test', ['default', 'watch']);
+	grunt.registerTask('default', ['concat','karma']);
 }
