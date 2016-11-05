@@ -4,6 +4,12 @@ Native Angular re-write of the [gist-embed project by blairvanderhoof](https://g
 Enables you to include your gists in your angular projects. Since this is not a simply a wrapper but rather a re-write, it is completely integrated with the angular life-cycle. 
 This module does not require jQuery as an external dependency.
 
+##Getting started
+Simply pick up the **another-angular-gist-embed.js** file in the **dist** folder and include it in your project source
+then simply import the module into your project module
+
+`angular.module('yourProject',['another-angular-gist-embed']);`
+
 ##Usage
 
 To include a gist simply write a directive in your view with gist-id given in the option :
@@ -15,6 +21,8 @@ you can also use the directive as an attribute :
 `code gist-embed data-gist-id="gistId"></code>`
 
 Here `gistId` is resolved to a value on the parent scope ( `$scope.gistId` )
+
+##Examples
 
 The directive takes all the options and use-cases supported by the gist-embed project. See [this for examples](http://blairvanderhoof.com/gist-embed/)
 
@@ -52,6 +60,13 @@ Below given are a few examples of usage.
   </div>
 </body>
 ```
+Contributing
+------
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 
 
