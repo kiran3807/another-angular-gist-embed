@@ -27,7 +27,7 @@ describe('gistEmbedService specs : ',function(){
 		data = {},
 		scope = {},
 		test = false;
-		httpBackend.when('JSONP',url+'?callback=JSON_CALLBACK').respond(dataFixture);
+		 httpBackend.when('JSONP',url+'?callback=JSON_CALLBACK').respond(dataFixture);
 		service.loadGist(url,data,scope).then(function(gistData) {
 			test = gistData.hasClass('gist');
 			expect(test).toBe(true);
@@ -142,6 +142,31 @@ describe('gistEmbedService specs : ',function(){
 		});
 		httpBackend.flush();
 		rootScope.$apply();
+	});
+
+	it('Should cache requests when gistEnableCache is true', function() {
+		var id = '5457595',
+		url = 'https://gist.github.com/' + id + '.json',
+		data = {},
+		scope = {
+			gistEnableCache : true
+		};
+		
+		httpBackend.when('JSONP',url+'?callback=JSON_CALLBACK').respond(dataFixture);
+		service.loadGist(url, data, scope);
+		httpBackend.flush();
+		/*
+		 * Here we test for the callback spy to be called again
+		 * despite requests not being flushed the second time
+		 * Alternate way to test the same could be to check wether
+		 * httpBackend.flush throws an error on being called the
+		 * second time. As the requests have been cached and there
+		 * should not be any pending request
+		 */
+		var callback = jasmine.createSpy('callback');
+		service.loadGist(url, data, scope).then(callback);
+		rootScope.$apply();
+		expect(callback).toHaveBeenCalled();
 	});
 
 });
