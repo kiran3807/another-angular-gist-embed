@@ -63,13 +63,21 @@ Below given are a few examples of usage.
   </div>
 </body>
 ```
-Contributing
+##Contributing
 ------
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+You should have node.js installed in your system.
+Go into the directory where you want the project set up to be. Then :
+
+1. `git clone https://github.com/kiran3807/another-angular-gist-embed.git`
+2. `npm install`
+3.  Create your feature branch (`git checkout -b my-new-feature`)
+4.  Commit your changes (`git commit -am 'Add some feature'`)
+5.  Push to the branch (`git push origin my-new-feature`)
+6.  Create new Pull Request
+
+For running test in watch mode : `npm test`
+
+For creating a distributable file containing all of the code : `npm dist` (*this also runs all the tests for a single pass*)
 
 
 
